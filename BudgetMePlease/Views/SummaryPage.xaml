@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BudgetMePlease"
+             x:Class="BudgetMePlease.SummaryPage">
+
+    <StackLayout HorizontalOptions="Center">
+        <!-- Place new controls here -->
+        <StackLayout Padding="0, 50, 5, 5">
+            <Label Text="{Binding TotalBudget}" FontSize="30"/>
+        </StackLayout>
+        <ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding }"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

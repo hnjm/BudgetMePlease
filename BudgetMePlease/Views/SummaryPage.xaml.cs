@@ -1,4 +1,5 @@
-﻿using BudgetMePlease.ViewModels;
+﻿using BudgetMePlease.Services;
+using BudgetMePlease.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace BudgetMePlease
     [DesignTimeVisible(true)]
     public partial class SummaryPage : ContentPage
     {
+        private IEnvelopeService _envelopeService;
         public SummaryPage()
         {
             InitializeComponent();
-            summaryPageViewModel = new SummaryPageViewModel();
+            _envelopeService = new EnvelopeServiceImp();
+            summaryPageViewModel = new SummaryPageViewModel(_envelopeService);
         }
 
         private SummaryPageViewModel summaryPageViewModel

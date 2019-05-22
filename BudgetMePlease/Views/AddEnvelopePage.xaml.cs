@@ -15,10 +15,10 @@ namespace BudgetMePlease.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddEnvelopePage : ContentPage
     {
-        public AddEnvelopePage(IPageNavigation pageNav, IEnvelopeService envService, EnvelopeViewModel envVm)
+        public AddEnvelopePage(AddEnvelopePageViewModel addEnvelopePageViewModel)
         {
             InitializeComponent();
-            BindingContext = new AddEnvelopePageViewModel(envService, pageNav, envVm);
+            BindingContext = addEnvelopePageViewModel;
         }
     }
 }

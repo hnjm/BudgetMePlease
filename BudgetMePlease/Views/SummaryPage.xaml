@@ -9,13 +9,14 @@
         <StackLayout Padding="0, 50, 5, 5">
             <Label Text="{Binding TotalBudget}" FontSize="30"/>
         </StackLayout>
-        <ListView>
+        <ListView ItemsSource="{Binding EnvelopeCollection}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding }"/>
+                    <TextCell Text="{Binding Name}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Text="+ Add Envelope" Command="{Binding AddEnvelopeCommand}"></Button>
     </StackLayout>
 
 </ContentPage>

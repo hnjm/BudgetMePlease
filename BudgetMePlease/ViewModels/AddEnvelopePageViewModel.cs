@@ -13,7 +13,7 @@ namespace BudgetMePlease.ViewModels
     {
         private IEnvelopeService _envelopeService;
         private IPageNavigation _pageNavigation;
-        private Envelope _envelope;
+        public Envelope Envelope;
 
         public ICommand SaveEnvelopeCommand { get; set; }
 
@@ -23,9 +23,9 @@ namespace BudgetMePlease.ViewModels
         {
             _envelopeService = envelopeService;
             _pageNavigation = pageNavigation;
-            SaveEnvelopeCommand = new Command(() => SaveEnvelope());
+            SaveEnvelopeCommand = new Command(SaveEnvelope);
 
-            _envelope = new Envelope()
+            Envelope = new Envelope()
             {
                 Name = envelope.Name,
                 Id = envelope.Id,
@@ -37,12 +37,12 @@ namespace BudgetMePlease.ViewModels
 
         private void SaveEnvelope()
         {
-            if (_envelope == null)
+            if (Envelope == null)
                 return;
-            if (_envelope.Id == 0)
+            if (Envelope.Id == 0)
             {
-                _envelopeService.InsertEnvelopeAsync(_envelope);
-                AddEnvelope?.Invoke(this, _envelope);
+                _envelopeService.InsertEnvelopeAsync(Envelope);
+                AddEnvelope?.Invoke(this, Envelope);
             }
 
             _pageNavigation.PopAsync();

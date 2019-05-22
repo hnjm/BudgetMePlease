@@ -4,9 +4,9 @@
              x:Class="BudgetMePlease.Views.AddEnvelopePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Envelope Name.." Text="{Binding Path=Envelope.Name}"></Entry>
+            <Entry Placeholder="Monthly Budget.." Text="{Binding Path=Envelope.MonthlyBudget}"></Entry>
+            <Button Text="Save Envelope" Command="{Binding SaveEnvelopeCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

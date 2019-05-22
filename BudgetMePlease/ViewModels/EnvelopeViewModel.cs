@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BudgetMePlease.Models;
 
 namespace BudgetMePlease.ViewModels
 {
@@ -11,7 +12,7 @@ namespace BudgetMePlease.ViewModels
         private int _monthlyBudget;
         private int _spendings;
 
-        public int Id { get; set }
+        public int Id { get; set; }
         public string Name
         {
             get { return _name; }
@@ -30,5 +31,17 @@ namespace BudgetMePlease.ViewModels
             set { SetPropertyValue(ref _spendings, value); }
         }
 
+        public EnvelopeViewModel()
+        {
+
+        }
+
+        public EnvelopeViewModel(Envelope env)
+        {
+            Id = env.Id;
+            Name = env.Name;
+            MonthlyBudget = env.MonthlyBudget;
+            Spendings = env.Spendings;
+        }
     }
 }

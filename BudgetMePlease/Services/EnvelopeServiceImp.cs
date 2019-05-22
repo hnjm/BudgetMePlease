@@ -10,9 +10,9 @@ namespace BudgetMePlease.Services
     public class EnvelopeServiceImp : IEnvelopeService
     {
         private IEnvelopeDao _envelopeDao;
-        public EnvelopeServiceImp()
+        public EnvelopeServiceImp(EnvelopeDaoImp envDao)
         {
-            _envelopeDao = new EnvelopeDaoImp();
+            _envelopeDao = envDao;
         }
         public async Task DeleteEnvelopeAsync(Envelope envelope)
         {

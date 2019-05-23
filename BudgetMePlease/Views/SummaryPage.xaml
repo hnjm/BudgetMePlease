@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BudgetMePlease"
-             x:Class="BudgetMePlease.SummaryPage">
+             x:Class="BudgetMePlease.SummaryPage"
+             x:Name="currentPage">
 
     <StackLayout HorizontalOptions="Center">
         <!-- Place new controls here -->
@@ -10,7 +11,11 @@
         <ListView ItemsSource="{Binding EnvelopeCollection}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" TextColor="Red" Detail="{Binding MonthlyBudget}"/>
+                    <TextCell Text="{Binding Name}" TextColor="Red" Detail="{Binding MonthlyBudget}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Delete" IsDestructive="True" Command="{Binding Source={x:Reference currentPage}, Path=summaryPageViewModel.DeleteEnvelopeCommand}" CommandParameter="{Binding .}"></MenuItem>
+                        </TextCell.ContextActions>
+                    </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

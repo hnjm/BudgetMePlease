@@ -16,9 +16,10 @@ namespace BudgetMePlease.ViewModels
     public class SummaryPageViewModel : BaseViewModel
     {
         private bool _pageLoaded;
+        private string _total;
         private IEnvelopeService _envelopeService;
         private IPageNavigation _navigation;
-        private string _total;
+
         public string TotalMonthlyBudget
         {
             get { return _total; }
@@ -27,9 +28,10 @@ namespace BudgetMePlease.ViewModels
         
         public ObservableCollection<EnvelopeViewModel> EnvelopeCollection { get; private set; } = new ObservableCollection<EnvelopeViewModel>();
 
-        //Commands
+        // Commands
         public ICommand AddEnvelopeCommand { get; private set; }
         public ICommand LoadPageCommand { get; private set; }
+        public ICommand DeleteEnvelopeCommand { get; private set; }
 
         public SummaryPageViewModel(IEnvelopeService envelopeService, IPageNavigation nav)
         {
@@ -39,6 +41,7 @@ namespace BudgetMePlease.ViewModels
 
             LoadPageCommand = new Command(LoadPage);
             AddEnvelopeCommand = new Command(async () => await AddEnvelope());
+            DeleteEnvelopeCommand = new Command<EnvelopeViewModel>(async vm => await DeleteEnvelope(vm));
         }
 
         private async void LoadPage()
@@ -66,6 +69,13 @@ namespace BudgetMePlease.ViewModels
             });
 
             await _navigation.PushAsync(new AddEnvelopePage(addEnvelopeViewModel));
+        }
+
+        private async Task DeleteEnvelope(EnvelopeViewModel envelope)
+        {
+            var env = await _envelopeService.GetEnvelope(envelope.Id);
+            EnvelopeCollection.Remove(envelope);
+            await _envelopeService.DeleteEnvelopeAsync(env);
         }
 
         private async Task CalculateTotalMonthlyBudget()

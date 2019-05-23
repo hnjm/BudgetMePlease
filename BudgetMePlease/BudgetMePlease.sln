@@ -46,9 +46,9 @@ Global
 		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
-		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Debug|x86.ActiveCfg = Debug|x86
-		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Debug|x86.Build.0 = Debug|x86
-		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Debug|x86.Deploy.0 = Debug|x86
+		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Debug|x86.Build.0 = Debug|Any CPU
+		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Debug|x86.Deploy.0 = Debug|Any CPU
 		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|Any CPU.Deploy.0 = Release|Any CPU
@@ -58,10 +58,11 @@ Global
 		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|x86.ActiveCfg = Release|x86
-		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|x86.Build.0 = Release|x86
-		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|x86.Deploy.0 = Release|x86
+		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|x86.ActiveCfg = Release|Any CPU
+		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|x86.Build.0 = Release|Any CPU
+		{1F6B14B2-65BC-4EA6-B2C5-161A712E8B5A}.Release|x86.Deploy.0 = Release|Any CPU
 		{99C3F342-688F-47F1-9306-A891C1F0CB92}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{99C3F342-688F-47F1-9306-A891C1F0CB92}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{99C3F342-688F-47F1-9306-A891C1F0CB92}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{99C3F342-688F-47F1-9306-A891C1F0CB92}.Debug|iPhone.Build.0 = Debug|iPhone
 		{99C3F342-688F-47F1-9306-A891C1F0CB92}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator

@@ -6,13 +6,11 @@
 
     <StackLayout HorizontalOptions="Center">
         <!-- Place new controls here -->
-        <StackLayout Padding="0, 50, 5, 5">
-            <Label Text="{Binding TotalBudget}" FontSize="30"/>
-        </StackLayout>
+        <Label Text="{Binding TotalMonthlyBudget}" FontSize="30"/>
         <ListView ItemsSource="{Binding EnvelopeCollection}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}"/>
+                    <TextCell Text="{Binding Name}" TextColor="Red" Detail="{Binding MonthlyBudget}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

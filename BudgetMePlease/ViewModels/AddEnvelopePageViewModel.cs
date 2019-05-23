@@ -4,6 +4,7 @@ using BudgetMePlease.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -13,7 +14,8 @@ namespace BudgetMePlease.ViewModels
     {
         private IEnvelopeService _envelopeService;
         private IPageNavigation _pageNavigation;
-        public Envelope Envelope;
+
+        public Envelope Envelope { get; private set; }
 
         public ICommand SaveEnvelopeCommand { get; set; }
 
@@ -23,7 +25,7 @@ namespace BudgetMePlease.ViewModels
         {
             _envelopeService = envelopeService;
             _pageNavigation = pageNavigation;
-            SaveEnvelopeCommand = new Command(SaveEnvelope);
+            SaveEnvelopeCommand = new Command( async () => await SaveEnvelope());
 
             Envelope = new Envelope()
             {
@@ -35,17 +37,17 @@ namespace BudgetMePlease.ViewModels
             
         }
 
-        private void SaveEnvelope()
+        private async Task SaveEnvelope()
         {
-            if (Envelope == null)
+            if (Envelope.Name == null)
                 return;
             if (Envelope.Id == 0)
             {
-                _envelopeService.InsertEnvelopeAsync(Envelope);
+                await _envelopeService.InsertEnvelopeAsync(Envelope);
                 AddEnvelope?.Invoke(this, Envelope);
             }
-
-            _pageNavigation.PopAsync();
+            
+            await _pageNavigation.PopAsync();
         }
     }
 }

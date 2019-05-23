@@ -10,7 +10,7 @@ namespace BudgetMePlease.Models
         [AutoIncrement, PrimaryKey]
         public int Id { get; set; }
         public string Name { get; set; }
-        public int MonthlyBudget { get; set; }
+        public string MonthlyBudget { get; set; }
         public int Spendings { get; set; }
     }
 }

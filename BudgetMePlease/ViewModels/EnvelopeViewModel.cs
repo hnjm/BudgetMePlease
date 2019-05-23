@@ -7,9 +7,8 @@ namespace BudgetMePlease.ViewModels
 {
     public class EnvelopeViewModel : BaseViewModel
     {
-        private int id;
         private string _name;
-        private int _monthlyBudget;
+        private string _monthlyBudget;
         private int _spendings;
 
         public int Id { get; set; }
@@ -19,7 +18,7 @@ namespace BudgetMePlease.ViewModels
             set { SetPropertyValue(ref _name, value); }
         }
 
-        public int MonthlyBudget
+        public string MonthlyBudget
         {
             get { return _monthlyBudget; }
             set { SetPropertyValue(ref _monthlyBudget, value); }
@@ -39,9 +38,9 @@ namespace BudgetMePlease.ViewModels
         public EnvelopeViewModel(Envelope env)
         {
             Id = env.Id;
-            Name = env.Name;
-            MonthlyBudget = env.MonthlyBudget;
-            Spendings = env.Spendings;
+            _name = env.Name;
+            _monthlyBudget = env.MonthlyBudget;
+            _spendings = env.Spendings;
         }
     }
 }

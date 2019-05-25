@@ -21,10 +21,13 @@ namespace BudgetMePlease
         private IPageNavigation nav;
         public SummaryPage()
         {
-            InitializeComponent();
             _envelopeService = new EnvelopeServiceImp(new EnvelopeDaoImp());
             nav = new PageNavigation();
+
             summaryPageViewModel = new SummaryPageViewModel(_envelopeService, nav);
+
+            InitializeComponent();
+            
         }
 
         protected override void OnAppearing()

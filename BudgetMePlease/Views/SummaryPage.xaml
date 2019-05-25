@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Name="page"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BudgetMePlease"
-             x:Class="BudgetMePlease.SummaryPage"
-             x:Name="currentPage">
+             x:Class="BudgetMePlease.SummaryPage">
 
     <StackLayout HorizontalOptions="Center">
         <!-- Place new controls here -->
@@ -13,7 +13,9 @@
                 <DataTemplate>
                     <TextCell Text="{Binding Name}" TextColor="Red" Detail="{Binding MonthlyBudget}">
                         <TextCell.ContextActions>
-                            <MenuItem Text="Delete" IsDestructive="True" Command="{Binding Source={x:Reference currentPage}, Path=summaryPageViewModel.DeleteEnvelopeCommand}" CommandParameter="{Binding .}"></MenuItem>
+                            <MenuItem Text="Delete" IsDestructive="True" 
+                                      Command="{Binding Path=BindingContext.DeleteEnvelopeCommand, Source={x:Reference page}}" 
+                                      CommandParameter="{Binding .}"></MenuItem>
                         </TextCell.ContextActions>
                     </TextCell>
                 </DataTemplate>

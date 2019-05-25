@@ -32,6 +32,7 @@ namespace BudgetMePlease.ViewModels
         public ICommand AddEnvelopeCommand { get; private set; }
         public ICommand LoadPageCommand { get; private set; }
         public ICommand DeleteEnvelopeCommand { get; private set; }
+        public ICommand TestCommand { get; private set; }
 
         public SummaryPageViewModel(IEnvelopeService envelopeService, IPageNavigation nav)
         {
@@ -42,6 +43,7 @@ namespace BudgetMePlease.ViewModels
             LoadPageCommand = new Command(LoadPage);
             AddEnvelopeCommand = new Command(async () => await AddEnvelope());
             DeleteEnvelopeCommand = new Command<EnvelopeViewModel>(async vm => await DeleteEnvelope(vm));
+            TestCommand = new Command(Test);
         }
 
         private async void LoadPage()
@@ -89,6 +91,11 @@ namespace BudgetMePlease.ViewModels
                 }
                 TotalMonthlyBudget = "$" + tot.ToString();
             });
+        }
+
+        private void Test()
+        {
+            Console.WriteLine("Hello This Is Printing From The Delete Button Getting Clicked!!!!!!!!!!1");
         }
     }
 }
